@@ -4,5 +4,6 @@
     "IndividualProgression.TBCPowerAdjustment": "0.6",
     "IndividualProgression.TBCHealingAdjustment": "0.6",
     "IndividualProgression.BotAccountsMaxLevel": "70",
-    "IndividualProgression.RequiredZulAmanProgression": "11"
+    "IndividualProgression.RequiredZulAmanProgression": "11",
+    "IndividualProgression.TBC.ArenaSeason": "1"
 }

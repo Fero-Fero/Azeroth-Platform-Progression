@@ -1,5 +1,6 @@
 {
     "IndividualProgression.StartingProgression": "10",
     "IndividualProgression.ProgressionLimit": "10",
-    "IndividualProgression.DisableQuestMarkers": "0"
+    "IndividualProgression.DisableQuestMarkers": "0",
+    "IndividualProgression.TBC.ArenaSeason": "3"
 }
