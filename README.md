@@ -202,9 +202,7 @@ Initial sync may overwrite content in managed progression patch folders. Later s
 
 Run **Validate patches** after sync and before applying any patch. Validation:
 
-- Confirms `{stackRoot}/azeroth-platform-progression/` exists (run sync first if not)
-- Compares each managed patch under `migrations/` to the matching reference folder in that checkout
+- When progression patches exist on the stack, compares each managed patch under `migrations/` to the matching reference folder in `{stackRoot}/azeroth-platform-progression/` (run sync first if patches are missing)
 - Checks that every key in each patch's `config/*.json` files exists in the corresponding server `.conf` on the stack
-- Confirms progression module settings (`IndividualProgression.*`, `Expansion`, etc.) are readable and writable
 
 Re-run validation after every server recompile — a new build invalidates the previous check.
