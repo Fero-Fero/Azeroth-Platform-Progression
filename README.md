@@ -208,11 +208,3 @@ Run **Validate patches** after sync and before applying any patch. Validation:
 - Confirms progression module settings (`IndividualProgression.*`, `Expansion`, etc.) are readable and writable
 
 Re-run validation after every server recompile — a new build invalidates the previous check.
-
-### Contributing / editing patch data
-
-1. Change this repository and push to GitHub (`https://github.com/Fero-Fero/Azeroth-Platform-Progression`)
-2. On each stack, run **Update & Re-sync** on the Patches tab — the manager `git pull`s the on-stack checkout and refreshes patch folders and files
-3. Run **Validate patches**, then apply patches as usual
-
-For local development of Azeroth Platform itself, you do **not** need a separate clone of this repo next to the platform repository. Use sync on a test stack; the checkout lives at the absolute path `{BuildsPath}/{stackId}/azeroth-platform-progression/`.
