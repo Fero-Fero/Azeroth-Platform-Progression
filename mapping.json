@@ -1,0 +1,119 @@
+{
+    "mappings": [
+        {
+            "source": "mod-individual-progression/data/sql/world/base/*",
+            "destination": "classic/1.0 Start/sql/world/",
+            "optional": false
+        },
+        {
+            "source": "mod-individual-progression/optional/sql/world/zz_optional_ammo_stack_size.sql",
+            "destination": "classic/1.0 Start/sql/world/",
+            "optional": false
+        },
+        {
+            "source": "mod-individual-progression/optional/sql/world/zz_optional_aq_quest_nerf.sql",
+            "destination": "classic/1.0 Start/sql/world/",
+            "optional": true
+        },
+        {
+            "source": "mod-individual-progression/optional/sql/world/zz_optional_av_landmines.sql",
+            "destination": "classic/1.0 Start/sql/world/",
+            "optional": true
+        },
+        {
+            "source": "mod-individual-progression/optional/sql/world/zz_optional_creature_stats.sql",
+            "destination": "classic/1.0 Start/sql/world/",
+            "optional": false
+        },
+        {
+            "source": "mod-individual-progression/optional/sql/world/zz_optional_item_stack_sizes.sql",
+            "destination": "classic/1.0 Start/sql/world/",
+            "optional": false
+        },
+        {
+            "source": "mod-individual-progression/optional/sql/world/zz_optional_limit_spells_to_expansion.sql",
+            "destination": "classic/1.0 Start/sql/world/",
+            "optional": false
+        },
+        {
+            "source": "mod-individual-progression/optional/sql/world/zz_optional_phasing.sql",
+            "destination": "classic/1.0 Start/sql/world/",
+            "optional": false
+        },
+        {
+            "source": "mod-individual-progression/optional/sql/world/zz_optional_remove_heirlooms.sql",
+            "destination": "classic/1.0 Start/sql/world/",
+            "optional": false
+        },
+        {
+            "source": "mod-individual-progression/optional/sql/world/zz_optional_restore_crafting_cd_timers.sql",
+            "destination": "classic/1.0 Start/sql/world/",
+            "optional": false
+        },
+        {
+            "source": "mod-individual-progression/optional/sql/world/zz_optional_restore_potion_cd.sql",
+            "destination": "classic/1.0 Start/sql/world/",
+            "optional": false
+        },
+        {
+            "source": "mod-individual-progression/optional/sql/world/zz_optional_restore_rogue_poisons.sql",
+            "destination": "classic/1.0 Start/sql/world/",
+            "optional": false
+        },
+        {
+            "source": "mod-individual-progression/optional/sql/world/zz_optional_small_group_adjustments.sql",
+            "destination": "classic/1.0 Start/sql/world/",
+            "optional": true
+        },
+        {
+            "source": "mod-individual-progression/optional/sql/world/zz_optional_spell_damage_and_healing.sql",
+            "destination": "classic/1.0 Start/sql/world/",
+            "optional": false
+        },
+        {
+            "source": "mod-individual-progression/optional/sql/world/zz_optional_stackable_buff_scrolls.sql",
+            "destination": "classic/1.0 Start/sql/world/",
+            "optional": false
+        },
+        {
+            "source": "mod-individual-progression/optional/sql/world/zz_optional_tbc_heroic_dungeon_keys_nerf.sql",
+            "destination": "classic/2.3 Mount Hyjal, Black Temple/sql/world/",
+            "optional": false
+        },
+        {
+            "source": "mod-individual-progression/optional/sql/world/zz_optional_tbc_pvp_prices.sql",
+            "destination": "classic/2.0 Patch/sql/world/",
+            "optional": false
+        },
+        {
+            "source": "mod-individual-progression/optional/sql/world/zz_optional_unobtainable_items.sql",
+            "destination": "classic/1.0 Start/sql/world/",
+            "optional": true
+        },
+        {
+            "source": "mod-individual-progression/optional/sql/world/zz_optional_vanilla_crafting_requirements.sql",
+            "destination": "classic/1.0 Start/sql/world/",
+            "optional": false
+        },
+        {
+            "source": "mod-individual-progression/optional/sql/world/zz_optional_vanilla_models.sql",
+            "destination": "classic/1.0 Start/sql/world/",
+            "optional": false
+        },
+        {
+            "source": "mod-individual-progression/optional/sql/world/zz_optional_vanilla_regen_values.sql",
+            "destination": "classic/1.0 Start/sql/world/",
+            "optional": false
+        },
+        {
+            "source": "mod-individual-progression/optional/sql/world/zz_optional_vanilla_transports.sql",
+            "destination": "classic/1.0 Start/sql/world/",
+            "optional": false
+        },
+        {
+            "source": "mod-individual-progression/optional/sql/world/zz_optional_wotlk_hp_values_for_tbc_raids.sql",
+            "destination": "classic/3.0 Patch/sql/world/",
+            "optional": false
+        }
+    ]
+}
