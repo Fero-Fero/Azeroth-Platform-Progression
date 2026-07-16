@@ -1,7 +1,0 @@
-// example: { 
-//   "add": "Patch-W.MPQ", 
-//   "remove": "Patch-W.MPQ" 
-//   "description": {
-//        "Patch-W.MPQ": "This is a description of the patch in English",
-//    }
-// }

@@ -1,0 +1,17 @@
+{
+    "IndividualProgression.StartingProgression": "0",
+    "IndividualProgression.ProgressionLimit": "2",
+    "IndividualProgression.VanillaPowerAdjustment": "0.6",
+    "IndividualProgression.VanillaHealingAdjustment": "0.5",
+    "IndividualProgression.RequireNaxxStrathEntrance": "1",
+    "IndividualProgression.DisableRDF": "1",
+    "IndividualProgression.doableNaxx40Bosses_4H": "1",
+    "IndividualProgression.doableNaxx40Bosses_Gluth": "1",
+    "IndividualProgression.doableNaxx40Bosses_Patchwerk": "1",
+    "IndividualProgression.doableNaxx40Bosses_Razuvious": "1",
+    "IndividualProgression.TbcRacesUnlockProgression": "8",
+    "IndividualProgression.tbcRacesStartingProgression": "8",
+    "IndividualProgression.AllowEarlyDungeonSet2": "1",
+    "IndividualProgression.BotAccountsEarnPvPTitles": "1",
+    "IndividualProgression.BotAccountsMaxLevel": "60"
+}

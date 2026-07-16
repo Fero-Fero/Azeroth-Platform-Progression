@@ -1,0 +1,14 @@
+{
+    "IndividualProgression.StartingProgression": "12",
+    "IndividualProgression.ProgressionLimit": "12",
+    "IndividualProgression.VanillaPowerAdjustment": "1",
+    "IndividualProgression.VanillaHealingAdjustment": "1",
+    "IndividualProgression.TBCPowerAdjustment": "1",
+    "IndividualProgression.TBCHealingAdjustment": "1",
+    "IndividualProgression.RepeatableVanillaQuestsXP": "0",
+    "IndividualProgression.VanillaHunterPets": "0",
+    "IndividualProgression.WarlockDemonTrainers": "0",
+    "IndividualProgression.EnableAllSpellRanks": "1",
+    "IndividualProgression.DisableRDF": "0",
+    "IndividualProgression.WotLK.ArenaSeason": "5"
+}
