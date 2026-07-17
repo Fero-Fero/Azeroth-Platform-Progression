@@ -8,11 +8,13 @@ This repository is a data collection that aims to accurately restore the player 
 
 ```
 ├── classic/                         (also tbc/, wotlk/ — case insensitive)
-│   └── 1.0 Start/                   Patch folders use "{index} {Name}" (e.g. 1.1 Molten Core, 2.0 Patch)
+│   └── 1.0 Start/                   Patch folders use "{index} {Name}" (e.g. 1.1 Molten Core, 2.0 Karazhan)
 │       ├── description.md           Patch description (required)
-│       ├── config/                  Server config overrides applied on patch apply
-│       │   └── worldserver.json     → etc/worldserver.conf (see below)
-│       ├── script/                  Optional Lua scripts for this patch
+│       ├── config/                  Server and module config overrides applied on patch apply
+│       │   ├── worldserver.json     → etc/worldserver.conf
+│       │   └── individualProgression.json → etc/modules/individualProgression.conf
+│       ├── lua/                     Optional Lua scripts deployed to the worldserver on apply
+│       │   └── my_script.lua
 │       ├── sql/
 │       │   ├── world/*.sql
 │       │   ├── auth/*.sql
@@ -29,20 +31,20 @@ This repository is a data collection that aims to accurately restore the player 
 
 **Expansion folders** are `classic/`, `tbc/`, and `wotlk/`. Matching is **case insensitive** (`Classic/`, `CLASSIC/`, and `classic/` are equivalent).
 
-**Patch folder names** use the form `{index} {Label}` where `{index}` matches the stack patch index (`1.0`, `1.1`, `2.0`, …). Examples: `1.0 Start`, `1.2 Onyxia`, `2.4 Sunwell Plateau`.
+**Patch folder names** use the form `{index} {Label}` where `{index}` matches the stack patch index (`1.0`, `1.1`, `2.0`, …). Examples: `1.0 Start`, `1.2 Onyxia`, `2.0 Karazhan, Gruul's Lair, Magtheridon's Lair`.
 
 On the stack, patches are stored under `migrations/` as `patch {index} {SLUG}` (e.g. `patch 1.2 ONYXIA`). The patch **index** is what links a stack folder to its reference folder here.
 
 ### Config overrides (`config/`)
 
-Each JSON file in `config/` overrides keys in a server `.conf` file when the patch is applied:
+Each JSON file in `config/` overrides keys in a server or module `.conf` file when the patch is applied. Keys use AzerothCore's `Key = Value` syntax (the JSON value is written as-is).
 
 | File in patch | Target on stack |
 |---------------|-----------------|
 | `worldserver.json` | `etc/worldserver.conf` |
 | `authserver.json` | `etc/authserver.conf` |
 | `individualProgression.json` | `etc/modules/individualProgression.conf` |
-| `{moduleName}.json` | `etc/modules/{moduleName}.conf` |
+| `{moduleName}.json` | `etc/modules/{moduleName}.conf` (matched by base name) |
 
 Example `config/worldserver.json`:
 
@@ -51,6 +53,35 @@ Example `config/worldserver.json`:
     "Rate.XP.Kill": "2",
     "Rate.XP.Quest": "3"
 }
+```
+
+Example `config/individualProgression.json`:
+
+```json
+{
+    "IndividualProgression.StartingProgression": "0",
+    "IndividualProgression.ProgressionLimit": "2"
+}
+```
+
+**Placeholders:** an empty `{}`, a comment-only file, or whitespace-only JSON is ignored — useful to reserve the folder before real overrides are ready (same idea as a comment-only `mpq.json`).
+
+**Preview on the stack:** in the Patches tab, open a patch's **Preview changes** button to compare each override against the stack's **live** `.conf` values before apply (current vs new, highlighting keys that will change or be added).
+
+**Module configs:** the target `.conf` must exist on the stack (start or rebuild the server once so configs are seeded from `.conf.dist`). Validation reports missing config files and unknown keys.
+
+### Lua scripts (`lua/`)
+
+Optional `.lua` files for server-side behavior (requires a Lua engine such as `mod-ale` compiled into the worldserver).
+
+- Place scripts under `lua/` in the patch folder (subfolders allowed).
+- On **Apply**, Azeroth Platform copies them into the stack's live `lua_scripts/` directory (same destination as the **Lua Scripts** tab).
+- Later patches overwrite earlier files with the same relative path when patches are applied or re-applied in order.
+
+Example:
+
+```
+Classic/1.0 Start/lua/interrupt_area_trigger.lua
 ```
 
 ### MPQ directory (`mpq/`)
@@ -144,13 +175,15 @@ The `mapping.json` file at the repository root defines how SQL from the `mod-ind
 }
 ```
 
+Destinations may also target `config/`, `lua/`, `dbc/`, `map/`, and `mpq/` under a patch folder.
+
 ### How Azeroth Platform uses this repository
 
 **Sync with mod-individual-progression** and **Validate patches** both use the same checkout of this repository, stored **on the stack** — not beside the platform repo and not on the host outside stack data.
 
 | Flow | What it does |
 | --- | --- |
-| **Sync with mod-individual-progression** | `git pull` on `mod-individual-progression`, then clone or `git pull` this repo on the stack; create `migrations/` patch folders from this layout; copy patch files; apply `mapping.json` to import SQL and other files from the module |
+| **Sync with mod-individual-progression** | `git pull` on `mod-individual-progression`, then clone or `git pull` this repo on the stack; create `migrations/` patch folders from this layout; copy patch files (SQL, DBC, map, MPQ, config, lua); apply `mapping.json` to import SQL and other files from the module |
 | **Validate patches** | Compare each stack patch folder under `migrations/` to the matching folder in the on-stack checkout; verify every `config/*.json` key exists in the live server `.conf` files |
 
 Nothing is cloned onto the host for sync or validation. The manager never expects a sibling `../Azeroth-Platform-Progression` checkout or a `MIGRATIONS_PROGRESSION_REPO_PATH` bind-mount.
@@ -169,7 +202,8 @@ Each stack's data root is `{BuildsPath}/{stackId}` (Docker default: `/app/data/s
 │       ├── progression.json             ← marks Individual Progression managed patches
 │       ├── description.md
 │       ├── sql/{world,auth,characters}/
-│       ├── dbc/, map/, mpq/, config/
+│       ├── config/, lua/, dbc/, map/, mpq/
+├── lua_scripts/                         ← live scripts (patch lua/ copies here on apply)
 ├── azerothcore-wotlk/                   ← server build checkout
 │   ├── modules/
 │   │   └── mod-individual-progression/  ← module sources (mapping.json copies from here)
@@ -193,7 +227,7 @@ After **Build** (or **Rebuild**), that module directory must exist before sync o
 1. **`git pull`** `mod-individual-progression` in the stack build checkout
 2. **`git clone`** this repository into `{stackRoot}/azeroth-platform-progression/` on first sync, then **`git pull`** on later runs
 3. Create or update `migrations/` patch folders from the expansion/patch layout in the on-stack checkout
-4. Copy SQL, DBC, map, MPQ, config, and other files from this repository into those patch folders
+4. Copy SQL, DBC, map, MPQ, **config**, and **lua** files from this repository into those patch folders
 5. Apply **`mapping.json`** — copy mapped sources from `mod-individual-progression` into the destinations defined here
 
 Initial sync may overwrite content in managed progression patch folders. Later syncs only update managed progression patches; custom patch folders are left unchanged.
@@ -203,6 +237,13 @@ Initial sync may overwrite content in managed progression patch folders. Later s
 Run **Validate patches** after sync and before applying any patch. Validation:
 
 - When progression patches exist on the stack, compares each managed patch under `migrations/` to the matching reference folder in `{stackRoot}/azeroth-platform-progression/` (run sync first if patches are missing)
-- Checks that every key in each patch's `config/*.json` files exists in the corresponding server `.conf` on the stack
+- Checks that every key in each patch's `config/*.json` files exists in the corresponding server or module `.conf` on the stack
+- Accepts the standard patch categories: `config`, `lua`, `sql`, `dbc`, `map`, and `mpq`
+
+Use **Preview changes** on an individual patch to see current vs new config values before apply.
 
 Re-run validation after every server recompile — a new build invalidates the previous check.
+
+### Apply order (per patch)
+
+When a patch is applied on the stack, Azeroth Platform runs (in order): SQL → DBC → maps → MPQ publish/removal → **config overrides** → **Lua deploy** (then restarts the worldserver when config or Lua changed). Re-apply-all runs the same stages for every already-applied patch in level order.
