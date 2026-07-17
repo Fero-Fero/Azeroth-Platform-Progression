@@ -17,7 +17,7 @@
         },
         {
             "source": "mod-individual-progression/optional/sql/world/zz_optional_av_landmines.sql",
-            "destination": "classic/1.0 Start/sql/world/",
+            "destination": "classic/1.5 AQ/sql/world/",
             "optional": true
         },
         {
