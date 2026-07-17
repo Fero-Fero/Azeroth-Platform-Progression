@@ -12,7 +12,11 @@ This repository is a data collection that aims to accurately restore the player 
 │       ├── description.md           Patch description (required)
 │       ├── config/                  Server and module config overrides applied on patch apply
 │       │   ├── worldserver.json     → etc/worldserver.conf
+│       │   ├── launcher.json        → stack launcher theme (classic/tbc/wotlk) on expansion entry patches
 │       │   └── individualProgression.json → etc/modules/individualProgression.conf
+│       ├── news/                    Player-facing launcher/armory article published on patch apply
+│       │   ├── article.json         Headline, HTML body, tag (patch/expansion)
+│       │   └── cover.png            Optional cover image for the news card
 │       ├── lua/                     Optional Lua scripts deployed to the worldserver on apply
 │       │   └── my_script.lua
 │       ├── sql/
@@ -33,7 +37,61 @@ This repository is a data collection that aims to accurately restore the player 
 
 **Patch folder names** use the form `{index} {Label}` where `{index}` matches the stack patch index (`1.0`, `1.1`, `2.0`, …). Examples: `1.0 Start`, `1.2 Onyxia`, `2.0 Karazhan, Gruul's Lair, Magtheridon's Lair`.
 
-On the stack, patches are stored under `migrations/` as `patch {index} {SLUG}` (e.g. `patch 1.2 ONYXIA`). The patch **index** is what links a stack folder to its reference folder here.
+On the stack, patches are stored under `migrations/` as `patch {index} {Label}` (e.g. `patch 1.1 Molten Core & Onyxia`). The patch **index** and **label** must match the reference folder here after progression sync.
+
+### Launcher theme (`config/launcher.json`)
+
+Expansion entry patches switch the stack launcher visual theme when applied:
+
+| Patch | `theme` value |
+|-------|---------------|
+| `1.0 Start` | `classic` |
+| `2.0 Karazhan, Gruul's Lair, Magtheridon's Lair` | `tbc` |
+| `3.0 Naxxramas, Eye of Eternity, Obsidian Sanctum` | `wotlk` |
+
+```json
+{ "theme": "classic" }
+```
+
+Allowed values: `classic`, `tbc`, `wotlk`.
+
+### Patch news (`news/`)
+
+Each patch may ship a player-facing news article published to the launcher and armory when the patch is applied on a stack.
+
+```
+news/
+  article.json      # metadata (id, title, date, tag, htmlFile)
+  article.html      # editable HTML body (preferred)
+  cover.png         # card hero image
+  images/           # inline figures referenced from article.html
+```
+
+**`news/article.json`:**
+
+```json
+{
+  "id": "progression-1-1-molten-core-onyxia",
+  "title": "Fire and Shadow: Molten Core and Onyxia Now Live",
+  "date": "2005-02-12",
+  "tag": "patch",
+  "sortOrder": 0,
+  "isDraft": false,
+  "htmlFile": "article.html"
+}
+```
+
+- **`id`** — stable unique id (used for cover filename and deduplication on re-apply).
+- **`tag`** — `patch` for tier unlocks; `expansion` for 1.0, 2.0, and 3.0 entry patches.
+- **`htmlFile`** — defaults to `article.html`. Legacy inline `"html"` in JSON is still supported.
+- **`cover.png`** — hero image on the news card.
+- **`images/`** — inline `<img src="images/…">` paths in `article.html` are copied on apply.
+
+See **`NEWS_CONTENT_PLAN.md`** for the per-patch content checklist.
+
+**Preview on the stack:** in the Patches tab, open a patch's **News** tab and click **Preview news** before apply.
+
+`description.md` remains operator-facing patch notes; `news/` is for players.
 
 ### Config overrides (`config/`)
 
