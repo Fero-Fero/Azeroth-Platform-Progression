@@ -1,0 +1,2 @@
+-- Introduce Toravon the Ice Watcher 38433
+INSERT INTO acore_world.creature (guid, id, `map`, zoneId, areaId, spawnMask, phaseMask, equipment_id, position_x, position_y, position_z, orientation, spawntimesecs, wander_distance, currentwaypoint, curhealth, curmana, MovementType, npcflag, unit_flags, dynamicflags, ScriptName, VerifiedBuild, CreateObject, Comment) VALUES(202600, 38433, 624, 0, 0, 3, 1, 1, -43.3316, -288.708, 91.2511, 1.58825, 604800, 0.0, 0, 1, 0, 0, 0, 0, 0, '', 0, 0, NULL);

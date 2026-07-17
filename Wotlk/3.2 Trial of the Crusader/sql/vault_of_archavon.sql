@@ -1,0 +1,2 @@
+-- Introduce Koralon the Flame Watcher 35013
+INSERT INTO acore_world.creature (guid, id, `map`, zoneId, areaId, spawnMask, phaseMask, equipment_id, position_x, position_y, position_z, orientation, spawntimesecs, wander_distance, currentwaypoint, curhealth, curmana, MovementType, npcflag, unit_flags, dynamicflags, ScriptName, VerifiedBuild, CreateObject, Comment) VALUES(202596, 35013, 624, 0, 0, 3, 1, 0, -218.521, 104.391, 91.8297, 4.69494, 604800, 0.0, 0, 1, 0, 0, 0, 0, 0, '', 0, 0, NULL);

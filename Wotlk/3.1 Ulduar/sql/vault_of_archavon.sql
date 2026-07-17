@@ -1,0 +1,2 @@
+-- Introduce Emalon the Storm Watcher 33993
+INSERT INTO acore_world.creature (guid, id, `map`, zoneId, areaId, spawnMask, phaseMask, equipment_id, position_x, position_y, position_z, orientation, spawntimesecs, wander_distance, currentwaypoint, curhealth, curmana, MovementType, npcflag, unit_flags, dynamicflags, ScriptName, VerifiedBuild, CreateObject, Comment) VALUES(202593, 33993, 624, 0, 0, 3, 1, 0, -218.726, -288.57, 91.5494, 1.58825, 604800, 0.0, 0, 1, 0, 0, 0, 0, 0, '', 0, 0, NULL);

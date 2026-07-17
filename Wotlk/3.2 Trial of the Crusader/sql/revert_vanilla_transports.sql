@@ -1,0 +1,6 @@
+/*-- restore transport from Orgrimmar to Thunder Bluff, added during WotLK (3.2.0) --*/
+INSERT INTO acore_world.transports (guid, entry, name, ScriptName) VALUES(20, 190549, 'Orgrimmar, Durotar and Thunder Bluff, Mulgore (Zeppelin, Horde ("The Zephyr"))', '');
+
+-- restore Zeppelin masters at Orgrimmar and Thunder Bluff 
+INSERT INTO acore_world.creature (guid, id, `map`, zoneId, areaId, spawnMask, phaseMask, equipment_id, position_x, position_y, position_z, orientation, spawntimesecs, wander_distance, currentwaypoint, curhealth, curmana, MovementType, npcflag, unit_flags, dynamicflags, ScriptName, VerifiedBuild, CreateObject, Comment) VALUES(203461, 34766, 1, 0, 0, 1, 1, 1, -1032.5, 313.137, 135.003, 4.64258, 180, 0.0, 0, 2218, 0, 0, 0, 0, 0, '', 0, 0, NULL);
+INSERT INTO acore_world.creature (guid, id, `map`, zoneId, areaId, spawnMask, phaseMask, equipment_id, position_x, position_y, position_z, orientation, spawntimesecs, wander_distance, currentwaypoint, curhealth, curmana, MovementType, npcflag, unit_flags, dynamicflags, ScriptName, VerifiedBuild, CreateObject, Comment) VALUES(203490, 34765, 1, 0, 0, 1, 1, 1, 1149.01, -4151.95, 51.746, 5.61, 300, 0.0, 0, 2218, 0, 0, 0, 0, 0, '', 0, 0, NULL);
