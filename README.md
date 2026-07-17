@@ -59,6 +59,8 @@ Allowed values: `classic`, `tbc`, `wotlk`.
 
 Each patch may ship a player-facing news article published to the launcher and armory when the patch is applied on a stack.
 
+Each patch should also include **`description.md`** — short operator notes shown on the patch **Description** tab in the manager (distinct from player-facing `news/`).
+
 ```
 news/
   article.json      # metadata (id, title, date, tag, htmlFile)
