@@ -1,1 +1,4 @@
-// example: { "Rate.XP.Kill": "2" }
+{
+    "Expansion": "2",
+    "CharacterCreating.Disabled.ClassMask": "0"
+}

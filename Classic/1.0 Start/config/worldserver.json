@@ -1,3 +1,6 @@
 {
-    "Expansion": "0"
+    "Expansion": "0",
+    "CharacterCreating.Disabled.RaceMask": "1536",
+    "CharacterCreating.Disabled.ClassMask": "32",
+    "MaxPlayerLevel": "60"
 }
