@@ -3,10 +3,10 @@ UPDATE `trainer_spell` SET `ReqLevel` = 6 WHERE `TrainerId` = 1 AND `SpellId` = 
 UPDATE `trainer_spell` SET `ReqLevel` = 6 WHERE `TrainerId` = 2 AND `SpellId` = 34428;  -- Victory Rush, level 6 -> 62
 
 -- Paladin
-UPDATE `trainer_spell` SET `ReqLevel` = 14 WHERE `TrainerId` = 3 AND `SpellId` = 31789;  -- Righteous Defense, level 14 -> 61
-UPDATE `trainer_spell` SET `ReqLevel` = 28 WHERE `TrainerId` = 3 AND `SpellId` = 53407;  -- Judgement of Justice, level 28 -> 71
-UPDATE `trainer_spell` SET `ReqLevel` = 12 WHERE `TrainerId` = 3 AND `SpellId` = 53408;  -- Judgement of Wisdom, level 12 -> 71
-UPDATE `trainer_spell` SET `ReqLevel` = 16 WHERE `TrainerId` = 3 AND `SpellId` = 62124;  -- Hand of Reckoning, level 16 -> 71
+UPDATE `trainer_spell` SET `ReqLevel` = 14 WHERE `TrainerId` IN (3, 4) AND `SpellId` = 31789;  -- Righteous Defense, level 14 -> 61
+UPDATE `trainer_spell` SET `ReqLevel` = 28 WHERE `TrainerId` IN (3, 4) AND `SpellId` = 53407;  -- Judgement of Justice, level 28 -> 71
+UPDATE `trainer_spell` SET `ReqLevel` = 12 WHERE `TrainerId` IN (3, 4) AND `SpellId` = 53408;  -- Judgement of Wisdom, level 12 -> 71
+UPDATE `trainer_spell` SET `ReqLevel` = 16 WHERE `TrainerId` IN (3, 4) AND `SpellId` = 62124;  -- Hand of Reckoning, level 16 -> 71
 
 -- Hunter
 UPDATE `trainer_spell` SET `ReqLevel` = 20 WHERE `TrainerId` = 7 AND `SpellId` = 34074;  -- Aspect of the Viper, level 20 -> 64
