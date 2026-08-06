@@ -23,8 +23,8 @@ local WORLD_EVENT_ON_STARTUP = 14
 local RAID_MAP_IDS = {
     --409,  -- Molten Core
     --249,  -- Onyxia's Lair
-    --309,  -- Zul'Gurub
     --469,  -- Blackwing Lair
+    309,  -- Zul'Gurub
     509,  -- Ruins of Ahn'Qiraj
     531,  -- Ahn'Qiraj Temple
     532,  -- Karazhan

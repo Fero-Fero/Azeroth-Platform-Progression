@@ -1,6 +1,6 @@
 {
     "IndividualProgression.StartingProgression": "0",
-    "IndividualProgression.ProgressionLimit": "2",
+    "IndividualProgression.ProgressionLimit": "1",
     "IndividualProgression.VanillaPowerAdjustment": "0.6",
     "IndividualProgression.VanillaHealingAdjustment": "0.5",
     "IndividualProgression.RequireNaxxStrathEntrance": "1",
