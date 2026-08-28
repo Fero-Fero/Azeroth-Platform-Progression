@@ -1,11 +1,6 @@
 {
     "mappings": [
         {
-            "source": "mod-individual-progression/data/sql/world/base/*",
-            "destination": "classic/1.0 Start/sql/world/",
-            "optional": false
-        },
-        {
             "source": "mod-individual-progression/optional/sql/world/zz_optional_ammo_stack_size.sql",
             "destination": "classic/1.0 Start/sql/world/",
             "optional": false
