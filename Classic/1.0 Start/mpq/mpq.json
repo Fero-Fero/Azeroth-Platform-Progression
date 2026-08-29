@@ -2,6 +2,6 @@
   "add": "Patch-W.MPQ", 
   "remove": "Patch-W.MPQ",
   "description": {
-       "Patch-W.MPQ": "Restore Classic UI, Maps, Textures"
+       "Patch-W.MPQ": "Restore Classic UI, Login screen, Music & Maps"
    }
 }
