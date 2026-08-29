@@ -15,5 +15,5 @@
     "IndividualProgression.BotAccountsEarnPvPTitles": "1",
     "IndividualProgression.BotAccountsMaxLevel": "60",
     "AiPlayerbot.LimitTalentsExpansion": "1",
-    "AiPlayerbot.DowngradeMaxLevelBot": "0"
+    "AiPlayerbot.DowngradeMaxLevelBot": "1"
 }
