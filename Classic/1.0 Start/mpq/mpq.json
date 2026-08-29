@@ -2,6 +2,6 @@
   "add": "Patch-W.MPQ", 
   "remove": "Patch-W.MPQ",
   "description": {
-       "Patch-W.MPQ": "This is a description of the patch in English",
+       "Patch-W.MPQ": "Restore Classic UI, Maps, Textures"
    }
 }
