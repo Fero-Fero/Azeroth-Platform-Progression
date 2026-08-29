@@ -1,6 +1,6 @@
 { 
   "add": "Patch-W.MPQ", 
-  "remove": "Patch-W.MPQ" ,
+  "remove": "" ,
   "description": {
        "Patch-W.MPQ": "Update the world map to include Outlands and various other TBC content"
    }
