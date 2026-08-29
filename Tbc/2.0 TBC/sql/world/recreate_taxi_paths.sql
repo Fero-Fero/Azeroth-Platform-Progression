@@ -71,7 +71,7 @@ INSERT INTO acore_world.smart_scripts (entryorguid, source_type, id, link, event
 (190549, 1, 0, 0, 71, 0, 100, 0, 21868, 0, 0, 0, 0, 0, 80, 19054900, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0.0, 0.0, 0.0, 0.0, 'The Zephyr - On Event 21868 Inform - Run Script'),
 (190549, 1, 1, 0, 71, 0, 100, 0, 21869, 0, 0, 0, 0, 0, 80, 19054901, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0.0, 0.0, 0.0, 0.0, 'The Zephyr - On Event 21869 Inform - Run Script'),
 (190549, 1, 2, 0, 71, 0, 100, 0, 21870, 0, 0, 0, 0, 0, 80, 19054902, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0.0, 0.0, 0.0, 0.0, 'The Zephyr - On Event 21870 Inform - Run Script'),
-(190549, 1, 3, 0, 71, 0, 100, 0, 21871, 0, 0, 0, 0, 0, 80, 19054903, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0.0, 0.0, 0.0, 0.0, 'The Zephyr - On Event 21871 Inform - Run Script');
+(190549, 1, 3, 0, 71, 0, 100, 0, 21871, 0, 0, 0, 0, 0, 80, 19054903, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0.0, 0.0, 0.0, 0.0, 'The Zephyr - On Event 21871 Inform - Run Script'),
 (18417, 0, 0, 0, 62, 0, 100, 512, 7715, 0, 0, 0, 0, 0, 52, 532, 0, 0, 0, 0, 0, 7, 0, 0, 0, 0, 0.0, 0.0, 0.0, 0.0, 'Altruis the Sufferer - On Gossip Option 0 Selected - Activate Taxi Path 532 (No Repeat)'),
 (18417, 0, 1, 0, 62, 0, 100, 512, 7715, 0, 0, 0, 0, 0, 26, 9991, 0, 0, 0, 0, 0, 7, 0, 0, 0, 0, 0.0, 0.0, 0.0, 0.0, 'Altruis the Sufferer - On Gossip Option 0 Selected - Quest Credit ''Survey the Land'' (No Repeat)'),
 (18417, 0, 2, 0, 62, 0, 100, 512, 8396, 0, 0, 0, 0, 0, 26, 10646, 0, 0, 0, 0, 0, 7, 0, 0, 0, 0, 0.0, 0.0, 0.0, 0.0, 'Altruis the Sufferer - On Gossip Option 0 Selected - Quest Credit ''Illidan''s Pupil'' (No Repeat)'),
