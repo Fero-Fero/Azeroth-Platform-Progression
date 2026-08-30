@@ -419,7 +419,9 @@
 			</Layers>				
 			<Scripts>
 				<OnLoad>
-					AchievementShield_OnLoad(self);
+					if AchievementShield_OnLoad then
+						AchievementShield_OnLoad(self);
+					end
 				</OnLoad>
 			</Scripts>
 		</Frame>

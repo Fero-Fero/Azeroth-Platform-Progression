@@ -101,6 +101,43 @@ function ClassicUI_BlockAchievements()
 	AchievementAlertFrame_OnClick = function()
 	end;
 
+	AchievementAlertFrame_ShowAlert = function()
+	end;
+
+	AchievementAlertFrame_GetAlertFrame = function()
+		return nil;
+	end;
+
+	AchievementShield_OnLoad = function()
+	end;
+
+	AchievementShield_SetPoints = function()
+	end;
+
+	if AlertFrame and AlertFrame.UnregisterEvent then
+		AlertFrame:UnregisterEvent("ACHIEVEMENT_EARNED");
+	end
+
+	if not ClassicUI_AchievementChatFiltered and ChatFrame_AddMessageEventFilter then
+		local function ClassicUI_FilterAchievementChat()
+			return true;
+		end
+		ChatFrame_AddMessageEventFilter("CHAT_MSG_ACHIEVEMENT", ClassicUI_FilterAchievementChat);
+		ChatFrame_AddMessageEventFilter("CHAT_MSG_GUILD_ACHIEVEMENT", ClassicUI_FilterAchievementChat);
+		ClassicUI_AchievementChatFiltered = true;
+	end
+
+	if ChatFrame_RemoveMessageGroup then
+		local numChatWindows = NUM_CHAT_WINDOWS or 10;
+		for i = 1, numChatWindows do
+			local frame = _G["ChatFrame"..i];
+			if frame then
+				ChatFrame_RemoveMessageGroup(frame, "ACHIEVEMENT");
+				ChatFrame_RemoveMessageGroup(frame, "GUILD_ACHIEVEMENT");
+			end
+		end
+	end
+
 	if not ClassicUI_ShowUIPanelHooked then
 		hooksecurefunc("ShowUIPanel", function(frame)
 			if frame and frame.GetName and frame:GetName() == "AchievementFrame" then

@@ -10,5 +10,6 @@
     "IndividualProgression.WarlockDemonTrainers": "0",
     "IndividualProgression.EnableAllSpellRanks": "1",
     "IndividualProgression.DisableRDF": "0",
-    "IndividualProgression.WotLK.ArenaSeason": "5"
+    "IndividualProgression.WotLK.ArenaSeason": "5",
+    "AiPlayerbot.LimitTalentsExpansion": "0"
 }
