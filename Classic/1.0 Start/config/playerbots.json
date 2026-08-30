@@ -1,4 +1,4 @@
 {
-    "playerbots.AiPlayerbot.LimitTalentsExpansion": "1",
-    "playerbots.AiPlayerbot.DowngradeMaxLevelBot": "1"
+    "AiPlayerbot.LimitTalentsExpansion": "1",
+    "AiPlayerbot.DowngradeMaxLevelBot": "1"
 }
