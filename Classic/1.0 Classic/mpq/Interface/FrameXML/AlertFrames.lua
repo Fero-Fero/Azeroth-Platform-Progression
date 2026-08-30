@@ -1,20 +1,11 @@
 MAX_ACHIEVEMENT_ALERTS = 2;
 
 function AlertFrame_OnLoad (self)
-	self:RegisterEvent("ACHIEVEMENT_EARNED");
 	self:RegisterEvent("LFG_COMPLETION_REWARD");
 end
 
 function AlertFrame_OnEvent (self, event, ...)
-	if ( event == "ACHIEVEMENT_EARNED" ) then
-		local id = ...;
-		
-		if ( not AchievementFrame ) then
-			AchievementFrame_LoadUI();
-		end
-		
-		AchievementAlertFrame_ShowAlert(id);
-	elseif ( event == "LFG_COMPLETION_REWARD" ) then
+	if ( event == "LFG_COMPLETION_REWARD" ) then
 		DungeonCompletionAlertFrame_ShowAlert();
 	end
 end
