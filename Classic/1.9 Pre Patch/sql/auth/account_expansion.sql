@@ -1,0 +1,1 @@
+UPDATE acore_auth.account SET expansion = 1;
