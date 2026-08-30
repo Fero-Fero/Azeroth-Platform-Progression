@@ -13,7 +13,5 @@
     "IndividualProgression.tbcRacesStartingProgression": "8",
     "IndividualProgression.AllowEarlyDungeonSet2": "1",
     "IndividualProgression.BotAccountsEarnPvPTitles": "1",
-    "IndividualProgression.BotAccountsMaxLevel": "60",
-    "AiPlayerbot.LimitTalentsExpansion": "1",
-    "AiPlayerbot.DowngradeMaxLevelBot": "1"
+    "IndividualProgression.BotAccountsMaxLevel": "60"
 }
