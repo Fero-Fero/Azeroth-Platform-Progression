@@ -1,1 +1,1 @@
-UPDATE acore_auth.account SET expansion = 1;
+UPDATE acore_auth.account SET expansion = 1 WHERE expansion < 1;
